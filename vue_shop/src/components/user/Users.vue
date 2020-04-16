@@ -145,6 +145,7 @@ export default {
         // 当前每页显示多少条数据
         pagesize: 2
       },
+      // 用户数据
       usersList: [],
       total: 0,
       // 控制添加用户对话框的显示与隐藏
@@ -198,9 +199,11 @@ export default {
     };
   },
   created() {
+    // 页面加载完成获取用户数据
     this.getUserList();
   },
   methods: {
+    // 获取用户列表数据
     async getUserList() {
       const { data: res } = await this.$http.get("users", {
         params: this.queryInfo
