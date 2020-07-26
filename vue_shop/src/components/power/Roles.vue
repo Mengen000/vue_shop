@@ -238,6 +238,7 @@ export default {
     },
     // 通过递归的形式，获取角色下所有三级权限的id，并保存到defkeys数组中
     getLeafKeys(node,arr){
+      console.log(node,123)
       // 如果当前节点不包含children属性 则是三级节点
       if(!node.children){
         return arr.push(node.id)
